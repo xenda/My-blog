@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyBlog</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+	<% if session[:current_user] %>
+		<%= link_to "Cerrar sesion", logout_path %>
+		<% else %>
+			<%= link_to "Registrarte", new_user_path %>
+			<%= link_to "Iniciar sesión", login_path %>
+		<% end %>
+		<%= flash[:notice] %>
+<%= yield %>
+
+</body>
+</html>

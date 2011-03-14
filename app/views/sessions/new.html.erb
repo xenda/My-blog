@@ -1,0 +1,9 @@
+<h1>Iniciando sesión</h1>
+
+<%= form_for @user, :url => authenticate_path do |f| %>
+Email:
+	<%= f.text_field :email %>
+Contraseña:
+	<%= f.password_field :password %>	
+	<%= f.submit "Iniciar sesión" %>
+<% end %>
